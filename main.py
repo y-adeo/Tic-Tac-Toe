@@ -82,9 +82,10 @@ def iniciar_jogo():
         global jogando
         global contador
         global jogar
+        global cor
 
         #Comparando valor recebido
-        if i ==(1):
+        if i==str(1):
             #Verificar se a posição está vazia
             if b_0['text']=='':
                 #Verificando quem está jogando e definir a cor
@@ -100,16 +101,17 @@ def iniciar_jogo():
 
                 #Verificando quem está jogando para trocar de jogador
                 if jogando == 'X':
-                    jogando = '0'
+                    jogando = 'O'
                     joga = 'Jogador 1'
                 else:
                     jogando = 'X'
                     joga = 'Jogador 2'
 
                 #Add no contador
-                contador += 1
+                contador+=1
 
-                if contador >= 5:
+                if contador>=5:
+                    #[linha][coluna]
                     #linhas
                     if tabela[0][0] == tabela [0][1] == [0][2] != '':
                         vencedor(jogando)
@@ -118,7 +120,439 @@ def iniciar_jogo():
                     elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
                         vencedor(jogando)
                     
-                    #coluna
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+
+
+        if i==str(2):
+            #Verificar se a posição está vazia
+            if b_1['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_1['fg'] = cor
+                b_1['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+        
+
+        if i==str(3):
+            #Verificar se a posição está vazia
+             if b_2['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_2['fg'] = cor
+                b_2['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+
+
+        if i==str(4):
+            #Verificar se a posição está vazia
+            if b_3['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_3['fg'] = cor
+                b_3['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+
+
+        if i==str(5):
+            #Verificar se a posição está vazia
+            if b_4['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_4['fg'] = cor
+                b_4['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+
+
+        if i==str(6):
+            #Verificar se a posição está vazia
+            if b_5['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_5['fg'] = cor
+                b_5['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+        
+
+        if i==str(7):
+            #Verificar se a posição está vazia
+             if b_6['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_6['fg'] = cor
+                b_6['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+
+
+        if i==str(8):
+            #Verificar se a posição está vazia
+            if b_7['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_7['fg'] = cor
+                b_7['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
+                    if tabela[0][0] == tabela [1][0] == [2][0] != '':
+                        vencedor(jogando)
+                    elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][2] == tabela[2][2] != '':
+                        vencedor(jogando)
+
+                    #diagonais
+                    if tabela[0][0] == tabela [1][1] == [2][2] != '':
+                        vencedor(jogando)
+                    elif tabela[0][2] == tabela[1][1] == tabela[2][0] != '':
+                        vencedor(jogando)
+                    
+                    #empate
+                    if contador >= 9:
+                        vencedor('Empate')
+        
+
+        if i==str(9):
+            #Verificar se a posição está vazia
+             if b_8['text']=='':
+                #Verificando quem está jogando e definir a cor
+                if jogando == 'X':
+                    cor=co7
+                if jogando == 'O':
+                    cor=co8
+
+                #Defininco cor do texto do botão e marcar posição com o valor de quem está jogando
+                b_8['fg'] = cor
+                b_8['text'] = jogando
+                tabela[[0][0]] = jogando
+
+                #Verificando quem está jogando para trocar de jogador
+                if jogando == 'X':
+                    jogando = 'O'
+                    joga = 'Jogador 1'
+                else:
+                    jogando = 'X'
+                    joga = 'Jogador 2'
+
+                #Add no contador
+                contador+=1
+
+                if contador>=5:
+                    #[linha][coluna]
+                    #linhas
+                    if tabela[0][0] == tabela [0][1] == [0][2] != '':
+                        vencedor(jogando)
+                    elif tabela[1][0] == tabela[1][1] == tabela[1][2] != '':
+                        vencedor(jogando)
+                    elif tabela[2][0] == tabela[2][1] == tabela[2][2] != '':
+                        vencedor(jogando)
+                    
+                    #colunas
                     if tabela[0][0] == tabela [1][0] == [2][0] != '':
                         vencedor(jogando)
                     elif tabela[0][1] == tabela[1][1] == tabela[2][1] != '':
@@ -143,7 +577,7 @@ def iniciar_jogo():
 
         print(i)
 
-    def vencedor():
+    def vencedor(i):
         pass
 
     def fim():
@@ -181,24 +615,24 @@ def iniciar_jogo():
     b_2.place(x=182, y=20)
 
     # Linha 1
-    b_0_1 = Button(frame_corpo, command=lambda:controlar('4'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_0_1.place(x=25, y=85)
+    b_3 = Button(frame_corpo, command=lambda:controlar('4'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_3.place(x=25, y=85)
 
-    b_1_1 = Button(frame_corpo, command=lambda:controlar('5'), text='', width=5, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_1_1.place(x=89, y=85)
+    b_4 = Button(frame_corpo, command=lambda:controlar('5'), text='', width=5, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_4.place(x=89, y=85)
 
-    b_2_1 = Button(frame_corpo, command=lambda:controlar('6'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_2_1.place(x=182, y=85)
+    b_5 = Button(frame_corpo, command=lambda:controlar('6'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_5.place(x=182, y=85)
 
     # Linha 2
-    b_0_2 = Button(frame_corpo, command=lambda:controlar('7'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_0_2.place(x=25, y=155)
+    b_6 = Button(frame_corpo, command=lambda:controlar('7'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_6.place(x=25, y=155)
 
-    b_1_2 = Button(frame_corpo, command=lambda:controlar('8'), text='', width=5, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_1_2.place(x=89, y=155)
+    b_7 = Button(frame_corpo, command=lambda:controlar('8'), text='', width=5, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_7.place(x=89, y=155)
 
-    b_2_2 = Button(frame_corpo, command=lambda:controlar('9'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
-    b_2_2.place(x=182, y=155)
+    b_8 = Button(frame_corpo, command=lambda:controlar('9'), text='', width=3, relief='flat', font=('Ivy 18 bold'), overrelief=RIDGE, background=fundo, fg=co7)
+    b_8.place(x=182, y=155)
 
 
 # Botão Jogar
